@@ -1,5 +1,4 @@
 #include<iostream>
-#include <stdlib.h>
 
 class Node{
     public:
@@ -31,9 +30,9 @@ Node* insert(Node* root , int value){
 int Height(Node* root){
     int x , y ;
     if(root == NULL) return 0;
-    x = Height(root->lchild);
-    y = Height(root->rchild );
-    return x > y ? x+1 : y+1;
+    x = Height(root->lchild) + 1;
+    y = Height(root->rchild ) + 1;
+    return x > y ? x : y;
 }
 
 Node* InOrderPredecessor(Node* node){
